@@ -7,7 +7,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export function Home() {
     return (
         <View style={styles.contairner}>
-            <Text style={styles.title}>Welcome, Keven</Text>
+            <Text style={styles.title}>Welcome, Keven Reis</Text>
         </View>
     );
 }
