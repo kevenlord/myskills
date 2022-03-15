@@ -1,13 +1,27 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
+
 import React from 'react';
 
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Platform, TouchableOpacity } from 'react-native';
 
 export function Home() {
     return (
         <View style={styles.contairner}>
             <Text style={styles.title}>Welcome, Keven Reis</Text>
+
+            <TextInput
+                style={styles.input}
+                placeholder="New Skill"
+                placeholderTextColor="#555"
+            />
+
+            <TouchableOpacity activeOpacity={0.8} style={styles.button}>
+                <Text style={styles.buttonText}>Add</Text>
+            </TouchableOpacity>
+
+            <Text style={[styles.title, { marginTop: 50 }]}>My Skills</Text>
         </View>
     );
 }
@@ -15,11 +29,36 @@ export function Home() {
 const styles = StyleSheet.create({
     contairner: {
         flex: 1,
-         justifyContent: 'center',
-         alignItems: 'center',
          backgroundColor: '#121015',
+         paddingHorizontal: 30,
+         paddingVertical: 70,
+
+
     },
     title:{
         color: '#FFF',
+        fontSize: 24,
+        fontWeight: 'bold',
     },
+    input:{
+        backgroundColor: '#1f1e25',
+        color: '#FFF',
+        fontSize: 18,
+        padding: Platform.OS === 'ios' ? 15 : 10,
+        marginTop: 30,
+        borderRadius: 7,
+    },
+    button:{
+        backgroundColor: '#A370F7',
+        padding: 15,
+        borderRadius: 7,
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    buttonText:{
+        color: '#FFF',
+        fontSize: 17,
+        fontWeight: 'bold',
+    },
+
 });
